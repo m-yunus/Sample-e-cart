@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/m-yunus/Sample-e-cart/static/css/main.45001815.css",
-    "main.js": "/m-yunus/Sample-e-cart/static/js/main.208937e1.js",
-    "index.html": "/m-yunus/Sample-e-cart/index.html",
-    "main.45001815.css.map": "/m-yunus/Sample-e-cart/static/css/main.45001815.css.map",
-    "main.208937e1.js.map": "/m-yunus/Sample-e-cart/static/js/main.208937e1.js.map"
+    "main.css": "/Sample-e-cart/static/css/main.45001815.css",
+    "main.js": "/Sample-e-cart/static/js/main.208937e1.js",
+    "index.html": "/Sample-e-cart/index.html",
+    "main.45001815.css.map": "/Sample-e-cart/static/css/main.45001815.css.map",
+    "main.208937e1.js.map": "/Sample-e-cart/static/js/main.208937e1.js.map"
   },
   "entrypoints": [
     "static/css/main.45001815.css",
