@@ -14,12 +14,12 @@ function App() {
        <Header/>
        
         <Routes>
-        <Route path='/cart' element={<Cart/>} />
-   <Route exact path='/' element={<Home/>} />
+        
+ 
     
    
-
-
+<Route path='/cart' element={<Cart/>} />
+  <Route exact path='/Sample-e-cart' element={<Home/>} />
     
     
     </Routes>
