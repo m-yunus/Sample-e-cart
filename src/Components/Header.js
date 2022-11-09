@@ -32,7 +32,7 @@ function Header() {
       <Badge>{Cart.length}</Badge>
       </Dropdown.Toggle>
 
-   <Dropdown.Menu style={{minWidth:250}}>
+   <Dropdown.Menu style={{minWidth:200}}>
 
 {Cart.length>0 ? (
    <>
