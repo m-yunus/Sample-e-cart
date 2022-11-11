@@ -6,6 +6,7 @@ import {Link} from "react-router-dom"
 import { CartState } from './Context'
 function Header() {
    const {state:{Cart},dispatch }=CartState();
+   const{productState,productDispatch}=CartState()
    console.log("Cartr iyems are",Cart);
   return (
 
@@ -21,6 +22,10 @@ function Header() {
             style={{width:500}}
             placeholder="search"
             className='m-auto'
+            onChange={(e)=>{productDispatch({
+               type:"FILTER_BY_SEARCH",
+               payload:e.target.value,
+            })}}
             />
                  </Navbar.Text> 
                  <Nav>
@@ -65,7 +70,12 @@ function Header() {
       </span>
 
    ))
-}</>
+}
+<Link    to="/cart">
+   <Button style={{width:"95%",margin:"0 10px"}}> Go to Cart</Button>
+</Link>
+
+</>
 ):(<span style={{padding:10}}>cart is empty</span>)}
 
 

@@ -1,9 +1,16 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Button, Form } from 'react-bootstrap'
+import { CartState } from './Context'
 import Rating from './Rating'
 
 function Filter() {
- const[rate,setRate]=useState(5)   
+
+
+const {productState:{
+    byStock,byFastDelivery,sort,byRating,searchQuery
+},productDispatch}=CartState()
+
+console.log(byStock,byFastDelivery,sort,byRating);
   return (
     <div className='filters'>
         <span className='title'>
@@ -16,6 +23,11 @@ function Filter() {
     name="group1"
     type="radio"
     id={`inline-1`}
+    onChange={(i)=>{productDispatch({
+            type:"SORT_BY_PRICE",
+            payload:"lowToHigh",
+    })}}
+    checked={sort==="lowToHigh" ? true:false}
     />
 </span>
 <span>
@@ -24,6 +36,11 @@ function Filter() {
     name='group1'
     type='radio'
     id={`inline-2`}
+    onChange={(i)=>{productDispatch({
+        type:"SORT_BY_PRICE",
+        payload:"highToLow",
+})}}
+checked={sort==="highToLow" ? true:false}
 />
 </span>
 <span>
@@ -32,6 +49,13 @@ function Filter() {
     name='group1'
     type='checkbox'
     id={`inline-3`}
+    onChange={()=>
+    productDispatch({
+        type:"FILTER_BY_STOCK",
+    })
+    
+    }
+    checked={byStock}
 />
 </span>
 <span>
@@ -40,14 +64,30 @@ function Filter() {
     name='group1'
     type='checkbox'
     id={`inline-4`}
+    onChange={()=>
+        productDispatch({
+            type:"FILTER_BY_DELIVERY",
+        })
+        
+        }
+        checked={byFastDelivery}
 />
 </span>
 
 <span>
     <label  style={{paddingRight:10}}>Rating</label>
-<Rating Rating={rate} style={{cursor:"pointer"}} onClick={(index)=>{setRate(index+1)}}/>
+<Rating Rating={byRating} style={{cursor:"pointer"}}
+ onClick={(index)=>productDispatch({type:"FILTER_BY_RATING",payload:index+1})}/>
 </span>
-<Button variant="light">
+<Button variant="light"
+   onClick={()=>
+    productDispatch({
+        type:"CLEAR_FILTERS",
+    })
+    
+    }
+
+>
     Clear Filters
 </Button>
 

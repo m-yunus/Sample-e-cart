@@ -7,7 +7,7 @@ function SingleProduct({items}) {
 
 const{state:{ Cart},dispatch,}=CartState();
 
-  console.log("ok ok ok ",items);
+  
   return (
     <div className='products'>
       <Card>

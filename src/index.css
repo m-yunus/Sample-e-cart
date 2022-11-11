@@ -103,3 +103,15 @@
     width: 100%;
   }
 }
+.col-img{
+
+width: 50px;
+
+}
+.col-img img{
+
+
+  width: 70px;
+  height: 120px;
+  object-fit: cover;
+}
